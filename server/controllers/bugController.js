@@ -53,7 +53,7 @@ export const updateBug = async (req, res) => {
       { _id: req.params.id },
       {
         ...req.body,
-        updatedAt: new Date(), // Explicitly set updatedAt to current timestamp
+        updatedAt: new Date(),
       },
       { new: true }
     );
