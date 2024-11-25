@@ -187,6 +187,10 @@ const BugDetails = () => {
                 <strong>Created At:</strong>{" "}
                 {new Date(bug.createdAt).toLocaleString()}
               </p>
+              <p>
+                <strong>Updated At:</strong>{" "}
+                {new Date(bug.updatedAt).toLocaleString()}
+              </p>
             </div>
             <div className="flex gap-4 mt-6">
               <button
