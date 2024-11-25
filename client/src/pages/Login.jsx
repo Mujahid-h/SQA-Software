@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../api/authApi";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToken, setUser } from "../redux/slices/userSlice";
 
@@ -94,6 +94,15 @@ const Login = () => {
             >
               {isSubmitting ? "Logging in..." : "Login"}
             </button>
+          </div>
+          <div className="flex  items-center mt-10">
+            <p>Dont have an Account?</p>
+            <Link
+              to={"/signup"}
+              className="rounded ml-2 text-md font-bold text-blue-600 hover:text-blue-700 hover:underline"
+            >
+              Create Account
+            </Link>
           </div>
         </form>
       </div>
