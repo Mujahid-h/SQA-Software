@@ -34,6 +34,19 @@ export const getBug = async (req, res) => {
   }
 };
 
+// export const updateBug = async (req, res) => {
+
+//   try {
+//     const bug = await Bug.findOneAndUpdate({ _id: req.params.id }, req.body, {
+//       new: true,
+//     });
+//     if (!bug) return res.status(404).json({ message: "Bug not found" });
+//     res.json(bug);
+//   } catch (error) {
+//     res.status(400).json({ message: error.message });
+//   }
+// };
+
 export const updateBug = async (req, res) => {
   try {
     const bug = await Bug.findOneAndUpdate(
@@ -68,8 +81,8 @@ export const commentOnBug = async (req, res) => {
     const { id } = req.params;
     const { commentText } = req.body; // Ensure commentText is destructured correctly.
 
-    console.log("Bug ID:", id);
-    console.log("Comment Text:", commentText);
+    // console.log("Bug ID:", id);
+    // console.log("Comment Text:", commentText);
 
     if (!commentText) {
       return res.status(400).json({ message: "Comment text is required" });
