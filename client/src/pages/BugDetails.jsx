@@ -3,6 +3,7 @@ import DefaultLayout from "../components/DefaultLayout";
 import { useParams, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getBugById, commentOnBug, deleteBug } from "../api/bugApi";
+import FileAttachmentViewer from "../components/FileAttachmentViewer";
 
 const BugDetails = () => {
   const { id } = useParams();
@@ -79,71 +80,8 @@ const BugDetails = () => {
     <DefaultLayout>
       <div className="container mx-auto px-4 py-8 space-y-8">
         {/* Bug Details */}
-        {/* <div className="bg-gradient-to-r flex lg:flex-row md:flex-col sm:flex-col justify-between from-blue-50 to-blue-100 shadow-md rounded-lg p-6">
-          <div>
-            <h2 className="text-3xl font-bold text-black mb-4">
-              {bug.bugName}
-            </h2>
-            <div className="space-y-2 text-gray-700">
-              <p>
-                <strong>Bug ID:</strong> {bug._id}
-              </p>
-              <p>
-                <strong>Description:</strong> {bug.description}
-              </p>
-              <p>
-                <strong>Priority:</strong>
-                <span
-                  className={`ml-2 px-2 py-1 rounded text-white ${
-                    bug.priority === "High"
-                      ? "bg-red-600"
-                      : bug.priority === "Medium"
-                      ? "bg-yellow-600"
-                      : "bg-green-600"
-                  }`}
-                >
-                  {bug.priority}
-                </span>
-              </p>
-              <p>
-                <strong>Status:</strong>
-                <span
-                  className={`ml-2 px-2 py-1 rounded text-white ${
-                    bug.status === "Open" ? "bg-green-600" : "bg-gray-600"
-                  }`}
-                >
-                  {bug.status}
-                </span>
-              </p>
-              <p>
-                <strong>Created By:</strong> {bug.createdBy.name || "Unknown"}
-              </p>
-              <p>
-                <strong>Created At:</strong>{" "}
-                {new Date(bug.createdAt).toLocaleString()}
-              </p>
-            </div>
-            <div className="flex gap-4 mt-6">
-              <button
-                onClick={handleEditBug}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 shadow-md transition"
-              >
-                Edit Bug
-              </button>
-              <button
-                onClick={handleDeleteBug}
-                className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 shadow-md transition"
-              >
-                Delete Bug
-              </button>
-            </div>
-          </div>
-          <div className="w-[40%]">
-            <image src={bug.attachments[0].filepath} alt={"Bug Image"} />
-          </div>
-        </div> */}
 
-        <div className="bg-gradient-to-r flex flex-col lg:flex-row justify-between from-blue-50 to-blue-100 shadow-md rounded-lg p-6">
+        <div className="bg-gradient-to-r flex flex-col  justify-between from-blue-50 to-blue-100 shadow-md rounded-lg p-6">
           {/* Bug Details */}
           <div className="lg:w-2/3 w-full">
             <h2 className="text-3xl font-bold text-black mb-4">
@@ -208,16 +146,19 @@ const BugDetails = () => {
             </div>
           </div>
 
-          {/* Image Section */}
-          <div className="lg:w-1/3 w-full mt-6 lg:mt-0 flex justify-center items-center">
-            {bug.attachments?.[0]?.filepath ? (
-              <img
-                src={bug.attachments[0].filepath}
-                alt="Bug"
-                className="rounded-lg shadow-md object-contain max-h-[300px] w-full"
-              />
+          {/* Attachments Section */}
+          <div className="lg:w-[60%] mx-auto w-full mt-6">
+            <h3 className="text-xl font-semibold mb-4">Attachments</h3>
+            {bug?.attachments && bug?.attachments?.length > 0 ? (
+              <div className="space-y-6">
+                {bug.attachments.map((attachment, index) => (
+                  <FileAttachmentViewer key={index} attachment={attachment} />
+                ))}
+              </div>
             ) : (
-              <p className="text-gray-500 text-center">No image available</p>
+              <p className="text-gray-500 text-center">
+                No attachments available
+              </p>
             )}
           </div>
         </div>
