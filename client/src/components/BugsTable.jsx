@@ -29,7 +29,7 @@ const BugsTable = ({ bugs }) => {
           </thead>
           <tbody>
             {bugs.length > 0 ? (
-              bugs.map((bug) => (
+              bugs.map((bug, index) => (
                 <tr
                   key={bug._id}
                   className="border-b last:border-b-0 hover:bg-gray-100 transition-all cursor-pointer"
@@ -39,7 +39,7 @@ const BugsTable = ({ bugs }) => {
                     {new Date(bug.createdAt).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 text-sm font-medium text-gray-700">
-                    {bug._id}
+                    {index + 1}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-600">
                     {bug.createdBy.name || "Unknown"}
