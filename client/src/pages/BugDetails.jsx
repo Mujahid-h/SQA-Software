@@ -25,7 +25,6 @@ const BugDetails = () => {
   const fetchBugDetails = async () => {
     try {
       const data = await getBugById(id, token);
-      console.log(data);
       setBug(data);
     } catch (error) {
       console.error("Error fetching bug details:", error);
@@ -72,9 +71,6 @@ const BugDetails = () => {
       </DefaultLayout>
     );
   }
-
-  const filepath = bug.attachments?.[0]?.filepath || "No file path available";
-  console.log(filepath);
 
   return (
     <DefaultLayout>
