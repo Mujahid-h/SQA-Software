@@ -306,7 +306,7 @@ const CreateBug = () => {
                     <p className="pl-1">or drag and drop</p>
                   </div>
                   <p className="text-xs text-gray-500">
-                    Images, PDFs, DOC, and TXT files up to 5MB
+                    JPG, JPEG, PNG upto 5MB
                   </p>
                 </div>
               </div>
