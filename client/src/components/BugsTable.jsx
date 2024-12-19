@@ -6,6 +6,7 @@ const BugsTable = ({ bugs }) => {
 
   return (
     <div className="container mx-auto px-4 lg:px-12 py-8 ">
+      <h1 className="text-center font-bold text-3xl py-10">Bugs Report</h1>
       <div className="overflow-x-auto shadow-lg rounded-lg">
         <table className="min-w-full bg-white rounded-lg overflow-hidden">
           <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
@@ -58,9 +59,11 @@ const BugsTable = ({ bugs }) => {
                   <td
                     className={`px-6 py-4 text-sm ${
                       bug.priority === "High"
-                        ? "text-red-600 font-semibold"
+                        ? "text-orange-600 font-semibold"
                         : bug.priority === "Medium"
                         ? "text-yellow-600 font-semibold"
+                        : bug.priority === "Critical"
+                        ? "text-red-600 font-semibold"
                         : "text-green-600 font-semibold"
                     }`}
                   >
