@@ -17,6 +17,12 @@ const commentSchema = new mongoose.Schema({
 });
 
 const bugSchema = new mongoose.Schema({
+  projectName: {
+    type: String,
+  },
+  platform: {
+    type: String,
+  },
   bugName: {
     type: String,
     required: true,

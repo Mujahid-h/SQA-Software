@@ -5,6 +5,7 @@ import { getBugs } from "../api/bugApi";
 import DefaultLayout from "../components/DefaultLayout";
 import BugsTable from "../components/BugsTable";
 import FilterBar from "../components/FilterBar";
+import SummaryTable from "../components/SummaryTable";
 
 const HomePage = () => {
   const { token } = useSelector((state) => state.user);
@@ -54,8 +55,11 @@ const HomePage = () => {
 
   return (
     <DefaultLayout>
+      <h1 className="text-center font-bold text-3xl py-10">Bugs Report</h1>
+
       <FilterBar filters={filters} setFilters={setFilters} />
       <BugsTable bugs={filteredBugs} />
+      <SummaryTable bugs={bugs} />
     </DefaultLayout>
   );
 };

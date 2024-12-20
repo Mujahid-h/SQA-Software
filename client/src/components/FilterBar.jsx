@@ -108,7 +108,7 @@ const FilterBar = ({ filters, setFilters }) => {
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-xl p-4 mt-10 border border-gray-200 mx-4 lg:mx-12 transition-all duration-300 ease-in-out hover:shadow-xl">
+    <div className="bg-white shadow-lg rounded-xl p-4  border border-gray-200 mx-4 lg:mx-12 transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row gap-3 items-center">
         {/* Bug ID Input
         <div className="relative flex-grow w-full md:w-1/5">

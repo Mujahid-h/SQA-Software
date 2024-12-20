@@ -18,6 +18,8 @@ const CreateBug = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
+    projectName: "",
+    platform: "",
     bugName: "",
     description: "",
     priority: "Low",
@@ -195,6 +197,42 @@ const CreateBug = () => {
           className="bg-white shadow-xl rounded-lg overflow-hidden"
         >
           <div className="p-6 space-y-6">
+            {/* Project Name */}
+            <div className="space-y-2">
+              <label
+                htmlFor="projectName"
+                className="text-sm font-medium text-gray-700 block"
+              >
+                Project Name
+              </label>
+              <input
+                type="text"
+                id="projectName"
+                value={formData.projectName}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                placeholder="Enter a descriptive name for the bug"
+              />
+            </div>
+            {/* Platform*/}
+            <div className="space-y-2">
+              <label
+                htmlFor="platform"
+                className="text-sm font-medium text-gray-700 block"
+              >
+                Platform
+              </label>
+              <input
+                type="text"
+                id="platform"
+                value={formData.platform}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                placeholder="Enter a descriptive name for the bug"
+              />
+            </div>
             {/* Bug Name */}
             <div className="space-y-2">
               <label
