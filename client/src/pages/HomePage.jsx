@@ -56,9 +56,9 @@ const HomePage = () => {
   return (
     <DefaultLayout>
       <h1 className="text-center font-bold text-3xl py-10">Bugs Report</h1>
-
       <FilterBar filters={filters} setFilters={setFilters} />
       <BugsTable bugs={filteredBugs} />
+      // yahan par ek count add hoga
       <SummaryTable bugs={bugs} />
     </DefaultLayout>
   );
