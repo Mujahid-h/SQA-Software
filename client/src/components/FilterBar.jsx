@@ -90,7 +90,7 @@
 // export default FilterBar;
 
 import React from "react";
-import { X, Search, User, Filter } from "lucide-react";
+import { X, User, Filter } from "lucide-react";
 
 const FilterBar = ({ filters, setFilters }) => {
   const handleChange = (e) => {
