@@ -171,6 +171,7 @@ const FilterBar = ({ filters, setFilters }) => {
             <option value="" className="text-gray-500">
               Priority
             </option>
+            <option value="Critical">Critical</option>
             <option value="High">High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
