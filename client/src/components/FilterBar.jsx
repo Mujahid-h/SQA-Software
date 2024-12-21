@@ -110,21 +110,6 @@ const FilterBar = ({ filters, setFilters }) => {
   return (
     <div className="bg-white shadow-lg rounded-xl p-4  border border-gray-200 mx-4 lg:mx-12 transition-all duration-300 ease-in-out hover:shadow-xl">
       <div className="flex flex-col space-y-3 md:space-y-0 md:flex-row gap-3 items-center">
-        {/* Bug ID Input
-        <div className="relative flex-grow w-full md:w-1/5">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="text-gray-400" size={18} />
-          </div>
-          <input
-            type="text"
-            name="bugId"
-            placeholder="Bug ID"
-            value={filters.}
-            onChange={handleChange}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
-          />
-        </div> */}
-
         {/* Created By Input */}
         <div className="relative flex-grow w-full md:w-1/5">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
