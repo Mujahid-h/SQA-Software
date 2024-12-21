@@ -95,9 +95,11 @@ const BugDetails = () => {
                 <span
                   className={`ml-2 px-2 py-1 rounded text-white ${
                     bug.priority === "High"
-                      ? "bg-red-600"
+                      ? "bg-orange-600"
                       : bug.priority === "Medium"
                       ? "bg-yellow-600"
+                      : bug.priority === "Critical"
+                      ? "bg-red-600"
                       : "bg-green-600"
                   }`}
                 >
