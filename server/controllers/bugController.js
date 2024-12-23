@@ -1,4 +1,3 @@
-// controllers/bugController.js
 import Bug from "../models/Bug.js";
 
 export const createBug = async (req, res) => {
