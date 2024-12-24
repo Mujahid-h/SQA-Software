@@ -1,4 +1,3 @@
-// routes/bugRoutes.js
 import express from "express";
 import {
   createBug,
@@ -6,7 +5,7 @@ import {
   getBug,
   updateBug,
   deleteBug,
-  commentOnBug
+  commentOnBug,
 } from "../controllers/bugController.js";
 import auth from "../middleware/auth.js";
 
