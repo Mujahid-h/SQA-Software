@@ -323,71 +323,71 @@
 //   );
 // };
 
-import React from "react";
-import { useNavigate } from "react-router-dom";
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
 
-const SummaryTable = ({ bugs }) => {
-  const navigate = useNavigate();
+// const SummaryTable = ({ bugs }) => {
+//   const navigate = useNavigate();
 
-  return (
-    <div className="container mx-auto px-4 lg:px-12 py-8 ">
-      <h1 className="text-center font-bold text-3xl py-10">Bugs Summary</h1>
-      <div className="overflow-x-auto shadow-lg rounded-lg">
-        <table className="min-w-full bg-white rounded-lg overflow-hidden">
-          <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
-            <tr>
-              <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
-                Date
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
-                Bug ID
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
-                BugName
-              </th>
-              <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
-                CreatedBy
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {bugs.length > 0 ? (
-              bugs.map((bug, index) => (
-                <tr
-                  key={bug._id}
-                  className="border-b last:border-b-0 hover:bg-gray-100 transition-all cursor-pointer"
-                  onClick={() => navigate(`bug-detail/${bug._id}`)}
-                >
-                  <td className="px-6 py-4 text-sm font-medium text-gray-700">
-                    {new Date(bug.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className="px-6 py-4 text-sm font-medium text-gray-700">
-                    {index + 1}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">
-                    {bug.bugName || "Unknown"}
-                  </td>
-                  <td className="px-6 py-4 text-sm text-gray-600">
-                    {bug.createdBy.name || "Unknown"}
-                  </td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td
-                  colSpan="4"
-                  className="px-6 py-4 text-center text-gray-500 italic"
-                >
-                  No bugs found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-      <div className="mt-8 flex justify-start"></div>
-    </div>
-  );
-};
+//   return (
+//     <div className="container mx-auto px-4 lg:px-12 py-8 ">
+//       <h1 className="text-center font-bold text-3xl py-10">Bugs Summary</h1>
+//       <div className="overflow-x-auto shadow-lg rounded-lg">
+//         <table className="min-w-full bg-white rounded-lg overflow-hidden">
+//           <thead className="bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+//             <tr>
+//               <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
+//                 Date
+//               </th>
+//               <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
+//                 Bug ID
+//               </th>
+//               <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
+//                 BugName
+//               </th>
+//               <th className="px-6 py-3 text-left text-sm font-semibold uppercase tracking-wide">
+//                 CreatedBy
+//               </th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {bugs.length > 0 ? (
+//               bugs.map((bug, index) => (
+//                 <tr
+//                   key={bug._id}
+//                   className="border-b last:border-b-0 hover:bg-gray-100 transition-all cursor-pointer"
+//                   onClick={() => navigate(`bug-detail/${bug._id}`)}
+//                 >
+//                   <td className="px-6 py-4 text-sm font-medium text-gray-700">
+//                     {new Date(bug.createdAt).toLocaleDateString()}
+//                   </td>
+//                   <td className="px-6 py-4 text-sm font-medium text-gray-700">
+//                     {index + 1}
+//                   </td>
+//                   <td className="px-6 py-4 text-sm text-gray-600">
+//                     {bug.bugName || "Unknown"}
+//                   </td>
+//                   <td className="px-6 py-4 text-sm text-gray-600">
+//                     {bug.createdBy.name || "Unknown"}
+//                   </td>
+//                 </tr>
+//               ))
+//             ) : (
+//               <tr>
+//                 <td
+//                   colSpan="4"
+//                   className="px-6 py-4 text-center text-gray-500 italic"
+//                 >
+//                   No bugs found.
+//                 </td>
+//               </tr>
+//             )}
+//           </tbody>
+//         </table>
+//       </div>
+//       <div className="mt-8 flex justify-start"></div>
+//     </div>
+//   );
+// };
 
-export default SummaryTable;
+// export default SummaryTable;
