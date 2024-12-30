@@ -21,7 +21,9 @@ connectDB();
 // Routes
 app.use("/api", authRoutes);
 app.use("/api/bugs", bugRoutes);
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  res.send("API running...");
+});
 
 // Start the server
 const PORT = process.env.PORT || 5000;
