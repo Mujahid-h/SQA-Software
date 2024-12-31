@@ -21,6 +21,8 @@ connectDB();
 // Routes
 app.use("/api", authRoutes);
 app.use("/api/bugs", bugRoutes);
+
+// testing route
 app.get("/", (req, res) => {
   res.send("Hello World!");
   res.send("API running...");
