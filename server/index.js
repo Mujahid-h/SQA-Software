@@ -22,7 +22,7 @@ connectDB();
 app.use("/api", authRoutes);
 app.use("/api/bugs", bugRoutes);
 app.get("/", (req, res) => {
-  //   res.send("API running...");
+  res.send("API running...");
 });
 
 // Start the server
